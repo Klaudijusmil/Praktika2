@@ -15,7 +15,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import praktika.Manager;
-import praktika.Model.Patiekalas;
 import praktika.Model.Product;
 
 import java.io.FileWriter;
@@ -36,7 +35,7 @@ public class BasketViewController implements Initializable {
     private Stage stage = null;
     private String sessionCode = null;
 
-    public void setManager(Manager manager){
+    public void setManager(Manager manager) {
         this.manager = manager;
     }
 
@@ -44,7 +43,7 @@ public class BasketViewController implements Initializable {
         this.stage = stage;
     }
 
-    public void setSessionCode(String code){
+    public void setSessionCode(String code) {
         this.sessionCode = code;
         loadProductsToTable();
     }
@@ -64,10 +63,10 @@ public class BasketViewController implements Initializable {
         stage.show();
     }
 
-    public void deleteSelected(){
+    public void deleteSelected() {
         Product preke = (Product) lentele.getSelectionModel().getSelectedItem();
         try {
-            if(preke != null) {
+            if (preke != null) {
                 manager.deleteDish(preke);
                 loadProductsToTable();
             }
@@ -76,9 +75,9 @@ public class BasketViewController implements Initializable {
         }
     }
 
-    public void increaseQuantityOfSelectedDish(){
+    public void increaseQuantityOfSelectedDish() {
         Product preke = (Product) lentele.getSelectionModel().getSelectedItem();
-        if(preke != null) {
+        if (preke != null) {
             int increasedQuantity = preke.getKiekis() + 1;
             if (increasedQuantity < 1000) {
                 preke.setKiekis(increasedQuantity);
@@ -98,9 +97,9 @@ public class BasketViewController implements Initializable {
         }
     }
 
-    public void decreaseQuantityOfSelectedDish(){
+    public void decreaseQuantityOfSelectedDish() {
         Product preke = (Product) lentele.getSelectionModel().getSelectedItem();
-        if(preke != null) {
+        if (preke != null) {
             int decreasedQuantity = preke.getKiekis() - 1;
             if (decreasedQuantity > 0) {
                 preke.setKiekis(decreasedQuantity);
@@ -120,7 +119,7 @@ public class BasketViewController implements Initializable {
         }
     }
 
-    public void printCheck(){
+    public void printCheck() {
         FileWriter fw = null;
 
         try {
@@ -129,14 +128,14 @@ public class BasketViewController implements Initializable {
             Date date = new Date();
             fw.append(dt.format(date));
             fw.append("\nPavadinimas\t\tKiekis\t\tKaina\n\n");
-            for(Product p : manager.getAllProductsFromSession(sessionCode))
+            for (Product p : manager.getAllProductsFromSession(sessionCode))
                 fw.append(p.toString() + "\n");
             fw.append(getPrices());
 
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            if(fw != null) {
+            if (fw != null) {
                 try {
                     fw.close();
                 } catch (IOException e) {
@@ -145,9 +144,9 @@ public class BasketViewController implements Initializable {
             }
         }
 
-}
+    }
 
-    public void showPrices(){
+    public void showPrices() {
         try {
             priceText.setText(getPrices());
         } catch (Exception e) {
@@ -159,7 +158,7 @@ public class BasketViewController implements Initializable {
         return "\nKaina (be PVM): " + manager.getSumOfProductsWithoutVAT(sessionCode) + "\nKaina (su PVM): " + manager.getSumOfProductsWithVAT(sessionCode);
     }
 
-    public void loadProductsToTable(){
+    public void loadProductsToTable() {
         try {
             lentele.getItems().clear();
             ObservableList<Product> products = FXCollections.observableArrayList(manager.getAllProductsFromSession(sessionCode));
@@ -172,16 +171,16 @@ public class BasketViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        TableColumn<String, Patiekalas> column1 = new TableColumn<>("Patiekalas");
+        TableColumn<String, Product> column1 = new TableColumn<>("Patiekalas");
         column1.setCellValueFactory(new PropertyValueFactory<>("pavadinimas"));
 
-        TableColumn<String, Patiekalas> column2 = new TableColumn<>("Kaina (be PVM)");
+        TableColumn<String, Product> column2 = new TableColumn<>("Kaina (be PVM)");
         column2.setCellValueFactory(new PropertyValueFactory<>("kainabepvm"));
 
-        TableColumn<String, Patiekalas> column3 = new TableColumn<>("Kaina (su PVM)");
+        TableColumn<String, Product> column3 = new TableColumn<>("Kaina (su PVM)");
         column3.setCellValueFactory(new PropertyValueFactory<>("kainasupvm"));
 
-        TableColumn<String, Patiekalas> column4 = new TableColumn<>("Kiekis");
+        TableColumn<String, Product> column4 = new TableColumn<>("Kiekis");
         column4.setCellValueFactory(new PropertyValueFactory<>("kiekis"));
 
         lentele.getColumns().add(column1);

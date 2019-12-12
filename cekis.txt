@@ -1,7 +1,8 @@
-2019-12-12 01:46:52
+2019-12-12 14:08:32
 Pavadinimas		Kiekis		Kaina
 
-Monitorius			10		150.0
+Pelė			14		100.0
+Ausinės			11		110.0
 
-Kaina (be PVM): 1500.00
-Kaina (su PVM): 1815.00
+Kaina (be PVM): 2610.00
+Kaina (su PVM): 3158.10
