@@ -147,8 +147,7 @@ public class Manager {
         ArrayList<Product> prekes = getAllProductsFromSession(sessionCode);
         for(Product p : prekes)
             sum += (p.getKainasupvm() * p.getKiekis());
-        String suma = String.format("%.2f", sum);
-        return suma;
+        return String.format("%.2f", sum);
     }
 
 }
