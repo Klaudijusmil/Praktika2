@@ -1,0 +1,7 @@
+2019-12-12 01:46:52
+Pavadinimas		Kiekis		Kaina
+
+Monitorius			10		150.0
+
+Kaina (be PVM): 1500.00
+Kaina (su PVM): 1815.00

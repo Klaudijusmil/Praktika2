@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<VBox alignment="TOP_CENTER" prefHeight="570.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="praktika.Controllers.LoginViewController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Iveskite savo duomenis" textAlignment="CENTER" wrappingWidth="368.91943359375">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="50.0" top="150.0" />
+         </VBox.margin>
+      </Text>
+      <Label text="Slapyvardis" />
+      <TextField fx:id="slapyvardis" promptText="Jusu slapyvardis">
+         <VBox.margin>
+            <Insets bottom="20.0" />
+         </VBox.margin>
+      </TextField>
+      <Label text="Slaptazodis" />
+      <PasswordField fx:id="slaptazodis" promptText="Slaptazodis">
+         <VBox.margin>
+            <Insets bottom="20.0" />
+         </VBox.margin>
+      </PasswordField>
+      <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#confirm" text="Patvirtinti" />
+   </children>
+   <padding>
+      <Insets left="150.0" right="150.0" />
+   </padding>
+</VBox>
