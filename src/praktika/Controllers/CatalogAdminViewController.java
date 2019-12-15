@@ -17,6 +17,7 @@ import praktika.Model.Product;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class CatalogAdminViewController implements Initializable {
@@ -27,6 +28,8 @@ public class CatalogAdminViewController implements Initializable {
     private Label _1pele, _2klaviatura, _3ausines, _4monitorius, kainaPele1, kainaKlaviatura2, kainaAusines3, kainaMonitorius4;
     @FXML
     private TextField kiekisPele, kiekisklaviatura, kiekisausines, kiekismonitorius;
+    @FXML
+    private ArrayList<Label> kainos;
 
     private Manager manager = null;
     private Stage stage = null;
@@ -84,6 +87,8 @@ public class CatalogAdminViewController implements Initializable {
     public void changeQuantity(ActionEvent event){
         int productId = Integer.parseInt(event.getSource().toString().substring(11, 12));
 
+        for (Label l : kainos)
+            System.out.println(l);
     }
 
     private int getQuantity(int dishID){
@@ -141,6 +146,10 @@ public class CatalogAdminViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        kainos.add(kainaPele1);
+        kainos.add(kainaKlaviatura2);
+        kainos.add(kainaAusines3);
+        kainos.add(kainaMonitorius4);
         kiekisausines.setText("0");
         kiekismonitorius.setText("0");
         kiekisklaviatura.setText("0");
