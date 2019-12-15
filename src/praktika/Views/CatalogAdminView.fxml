@@ -38,7 +38,7 @@
                            <font>
                               <Font size="14.0" />
                            </font></Label>
-                        <TextField fx:id="kiekisPele" prefHeight="25.0" prefWidth="47.0">
+                        <TextField fx:id="kiekisPele1" prefHeight="25.0" prefWidth="47.0">
                            <HBox.margin>
                               <Insets right="5.0" />
                            </HBox.margin></TextField>
@@ -74,7 +74,7 @@
                            <font>
                               <Font size="14.0" />
                            </font></Label>
-                        <TextField fx:id="kiekisklaviatura" prefHeight="25.0" prefWidth="44.0">
+                        <TextField fx:id="kiekisklaviatura2" prefHeight="25.0" prefWidth="44.0">
                            <HBox.margin>
                               <Insets right="5.0" />
                            </HBox.margin>
@@ -114,7 +114,7 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="kiekisausines" prefHeight="25.0" prefWidth="46.0">
+                        <TextField fx:id="kiekisausines3" prefHeight="25.0" prefWidth="46.0">
                            <HBox.margin>
                               <Insets right="5.0" />
                            </HBox.margin>
@@ -155,7 +155,7 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="kiekismonitorius" prefHeight="25.0" prefWidth="47.0">
+                        <TextField fx:id="kiekismonitorius4" prefHeight="25.0" prefWidth="47.0">
                            <HBox.margin>
                               <Insets right="5.0" />
                            </HBox.margin>

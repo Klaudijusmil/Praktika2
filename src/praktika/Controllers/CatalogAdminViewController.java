@@ -27,9 +27,11 @@ public class CatalogAdminViewController implements Initializable {
     @FXML
     private Label _1pele, _2klaviatura, _3ausines, _4monitorius, kainaPele1, kainaKlaviatura2, kainaAusines3, kainaMonitorius4;
     @FXML
-    private TextField kiekisPele, kiekisklaviatura, kiekisausines, kiekismonitorius;
+    private TextField kiekisPele1, kiekisklaviatura2, kiekisausines3, kiekismonitorius4;
     @FXML
-    private ArrayList<Label> kainos;
+    private ArrayList<Label> kainos = new ArrayList<>();
+    @FXML
+    private ArrayList<TextField> kainosInput = new ArrayList<>();
 
     private Manager manager = null;
     private Stage stage = null;
@@ -87,35 +89,45 @@ public class CatalogAdminViewController implements Initializable {
     public void changeQuantity(ActionEvent event){
         int productId = Integer.parseInt(event.getSource().toString().substring(11, 12));
 
-        for (Label l : kainos)
-            System.out.println(l);
+        Label label = kainos.get(productId - 1);
+        int labelID = Integer.parseInt(label.getId().substring(label.getId().length() - 1));
+
+        int naujaKaina = Integer.parseInt(kainosInput.get(labelID - 1).getText());
+
+        try {
+            manager.editProductInfo(productId, naujaKaina);
+            label.setText(kainosInput.get(labelID - 1).getText());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     private int getQuantity(int dishID){
         switch(dishID){
             case 1:
                 try {
-                    return Integer.parseInt(kiekisPele.getText());
+                    return Integer.parseInt(kiekisPele1.getText());
                 } catch (Exception e){
                     System.out.println("Bloga įvestis.");
                 }
             case 2:
                 try {
-                    return Integer.parseInt(kiekisklaviatura.getText());
+                    return Integer.parseInt(kiekisklaviatura2.getText());
                 }
                 catch (Exception e){
                     System.out.println("Bloga įvestis.");
                 }
             case 3:
                 try {
-                    return Integer.parseInt(kiekisausines.getText());
+                    return Integer.parseInt(kiekisausines3.getText());
                 }
                 catch (Exception e){
                     System.out.println("Bloga įvestis.");
                 }
             case 4:
                 try {
-                    return Integer.parseInt(kiekismonitorius.getText());
+                    return Integer.parseInt(kiekismonitorius4.getText());
                 }
                 catch (Exception e){
                     System.out.println("Bloga įvestis.");
@@ -150,10 +162,16 @@ public class CatalogAdminViewController implements Initializable {
         kainos.add(kainaKlaviatura2);
         kainos.add(kainaAusines3);
         kainos.add(kainaMonitorius4);
-        kiekisausines.setText("0");
-        kiekismonitorius.setText("0");
-        kiekisklaviatura.setText("0");
-        kiekisPele.setText("0");
+
+        kainosInput.add(kiekisPele1);
+        kainosInput.add(kiekisklaviatura2);
+        kainosInput.add(kiekisausines3);
+        kainosInput.add(kiekismonitorius4);
+
+        kiekisausines3.setText("0");
+        kiekismonitorius4.setText("0");
+        kiekisklaviatura2.setText("0");
+        kiekisPele1.setText("0");
     }
 
 }
