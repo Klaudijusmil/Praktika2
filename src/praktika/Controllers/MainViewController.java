@@ -65,13 +65,26 @@ public class MainViewController implements Initializable {
     }
 
     public void loadCatalog() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Views/CatalogView.fxml"));
+        FXMLLoader loader = null;
+        if(!manager.isAdmin())
+            loader = new FXMLLoader(getClass().getResource("../Views/CatalogView.fxml"));
+        else
+            loader = new FXMLLoader(getClass().getResource("../Views/CatalogAdminView.fxml"));
+
         Node catalogs = loader.load();
 
-        CatalogViewController catalogViewController = loader.getController();
-        catalogViewController.setManager(manager);
-        catalogViewController.setStage(stage);
-        catalogViewController.setSessionCode(sessionCode);
+        if(!manager.isAdmin()) {
+            CatalogViewController catalogViewController = loader.getController();
+            catalogViewController.setManager(manager);
+            catalogViewController.setStage(stage);
+            catalogViewController.setSessionCode(sessionCode);
+        }
+        else{
+            CatalogAdminViewController catalogAdminViewController = loader.getController();
+            catalogAdminViewController.setManager(manager);
+            catalogAdminViewController.setStage(stage);
+            catalogAdminViewController.setSessionCode(sessionCode);
+        }
 
         emptyContainer.getChildren().clear();
         emptyContainer.getChildren().add(catalogs);

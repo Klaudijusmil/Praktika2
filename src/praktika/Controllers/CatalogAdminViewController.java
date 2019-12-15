@@ -19,12 +19,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CatalogViewController implements Initializable {
+public class CatalogAdminViewController implements Initializable {
 
     @FXML
     private ImageView peleImage, klaviaturaImage, ausinesImage, monitoriusImage;
     @FXML
-    private Label _1pele, _2klaviatura, _3ausines, _4monitorius, kainaPele, kainaKlaviatura, kainaAusines, kainaMonitorius;
+    private Label _1pele, _2klaviatura, _3ausines, _4monitorius, kainaPele1, kainaKlaviatura2, kainaAusines3, kainaMonitorius4;
     @FXML
     private TextField kiekisPele, kiekisklaviatura, kiekisausines, kiekismonitorius;
 
@@ -81,6 +81,11 @@ public class CatalogViewController implements Initializable {
         }
     }
 
+    public void changeQuantity(ActionEvent event){
+        int productId = Integer.parseInt(event.getSource().toString().substring(11, 12));
+
+    }
+
     private int getQuantity(int dishID){
         switch(dishID){
             case 1:
@@ -128,10 +133,10 @@ public class CatalogViewController implements Initializable {
         _2klaviatura.setText(klaviatura.getPavadinimas());
         _3ausines.setText(ausines.getPavadinimas());
         _4monitorius.setText(monitorius.getPavadinimas());
-        kainaPele.setText(String.valueOf(peles.getKainabepvm()));
-        kainaKlaviatura.setText(String.valueOf(klaviatura.getKainabepvm()));
-        kainaAusines.setText(String.valueOf(ausines.getKainabepvm()));
-        kainaMonitorius.setText(String.valueOf(monitorius.getKainabepvm()));
+        kainaPele1.setText(String.valueOf(peles.getKainabepvm()));
+        kainaKlaviatura2.setText(String.valueOf(klaviatura.getKainabepvm()));
+        kainaAusines3.setText(String.valueOf(ausines.getKainabepvm()));
+        kainaMonitorius4.setText(String.valueOf(monitorius.getKainabepvm()));
     }
 
     @Override

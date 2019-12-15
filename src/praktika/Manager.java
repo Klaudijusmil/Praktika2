@@ -70,6 +70,19 @@ public class Manager {
         return prekes;
     }
 
+    public void editProductInfo(int productId, int price) throws Exception {
+        Product product = getProductByID(productId);
+
+        connectDB();
+        PreparedStatement ps = conn.prepareStatement("UPDATE prekes SET bepvm = ? WHERE id = ?");
+        ps.setInt(1, price);
+        ps.setInt(2, product.getId());
+        ps.executeUpdate();
+
+        ps.close();
+        disconnectDB();
+    }
+
     public void insertIntoBasket(Product p, String sessionCode) throws Exception {
         connectDB();
         PreparedStatement ps = conn.prepareStatement("INSERT INTO krepselis (sesijos_kodas, prekes_id, kiekis) VALUES(?, ?, ?)");

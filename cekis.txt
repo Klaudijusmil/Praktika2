@@ -1,8 +1,9 @@
-2019-12-12 14:08:32
+2019-12-15 23:44:26
 Pavadinimas		Kiekis		Kaina
 
-Pelė			14		100.0
-Ausinės			11		110.0
+Pelė			1		100.0
+Klaviatūra			3		50.0
+Ausinės			2		110.0
 
-Kaina (be PVM): 2610.00
-Kaina (su PVM): 3158.10
+Kaina (be PVM): 470.00
+Kaina (su PVM): 568.70

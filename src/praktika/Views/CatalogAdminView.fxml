@@ -5,17 +5,17 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<VBox alignment="center" prefHeight="621.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="praktika.Controllers.CatalogViewController">
+<VBox alignment="center" prefHeight="621.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="praktika.Controllers.CatalogAdminViewController">
    <children>
       <GridPane hgap="20.0" prefHeight="570.0" prefWidth="663.0" vgap="30.0">
-        <columnConstraints>
+         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
          <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
@@ -34,7 +34,7 @@
                            <font>
                               <Font size="14.0" />
                            </font></Label>
-                        <Label fx:id="kainaPele" prefHeight="17.0" prefWidth="39.0" text="1.1">
+                        <Label fx:id="kainaPele1" prefHeight="17.0" prefWidth="39.0" text="1.1">
                            <font>
                               <Font size="14.0" />
                            </font></Label>
@@ -42,7 +42,7 @@
                            <HBox.margin>
                               <Insets right="5.0" />
                            </HBox.margin></TextField>
-                        <Button fx:id="_1" mnemonicParsing="false" onAction="#addToBasket" text="Į krepšelį">
+                        <Button fx:id="_1" mnemonicParsing="false" onAction="#changeQuantity" text="Keisti">
                            <font>
                               <Font size="14.0" />
                            </font></Button>
@@ -55,7 +55,7 @@
             </VBox>
             <VBox alignment="CENTER" layoutX="30.0" layoutY="19.0" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                <children>
-                  <Label fx:id="_2klaviatura" onMouseClicked="#showDetails" text="Klaviatūros">
+                  <Label fx:id="_2klaviatura" onMouseClicked="#showDetails" text="Klaviatūra">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
@@ -70,7 +70,7 @@
                            <font>
                               <Font size="14.0" />
                            </font></Label>
-                        <Label fx:id="kainaKlaviatura" prefHeight="17.0" prefWidth="39.0" text="1">
+                        <Label fx:id="kainaKlaviatura2" prefHeight="17.0" prefWidth="39.0" text="1">
                            <font>
                               <Font size="14.0" />
                            </font></Label>
@@ -79,7 +79,7 @@
                               <Insets right="5.0" />
                            </HBox.margin>
                         </TextField>
-                        <Button fx:id="_2" mnemonicParsing="false" onAction="#addToBasket" text="Į krepšelį">
+                        <Button fx:id="_2" mnemonicParsing="false" onAction="#changeQuantity" text="Keisti">
                            <font>
                               <Font size="14.0" />
                            </font></Button>
@@ -109,7 +109,7 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="kainaAusines" prefHeight="17.0" prefWidth="39.0" text="2">
+                        <Label fx:id="kainaAusines3" prefHeight="17.0" prefWidth="39.0" text="2">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -119,7 +119,7 @@
                               <Insets right="5.0" />
                            </HBox.margin>
                         </TextField>
-                        <Button fx:id="_3" mnemonicParsing="false" onAction="#addToBasket" text="Į krepšelį">
+                        <Button fx:id="_3" mnemonicParsing="false" onAction="#changeQuantity" text="Keisti">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -150,7 +150,7 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="kainaMonitorius" prefHeight="17.0" prefWidth="39.0" text="0.69">
+                        <Label fx:id="kainaMonitorius4" prefHeight="17.0" prefWidth="39.0" text="0.69">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -160,7 +160,7 @@
                               <Insets right="5.0" />
                            </HBox.margin>
                         </TextField>
-                        <Button fx:id="_4" mnemonicParsing="false" onAction="#addToBasket" text="Į krepšelį">
+                        <Button fx:id="_4" mnemonicParsing="false" onAction="#changeQuantity" text="Keisti">
                            <font>
                               <Font size="14.0" />
                            </font>

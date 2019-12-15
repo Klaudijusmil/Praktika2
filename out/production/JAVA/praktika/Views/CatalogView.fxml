@@ -19,11 +19,11 @@
          <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label fx:id="_1kiausiniai" onMouseClicked="#showDetails" text="Kiaušiniai">
+                  <Label fx:id="_1pele" onMouseClicked="#showDetails" text="Pelės">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <ImageView fx:id="kiausinisImage" fitHeight="166.0" fitWidth="174.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="peleImage" fitHeight="166.0" fitWidth="174.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../assets/mouse.png" />
                      </image>
@@ -34,11 +34,11 @@
                            <font>
                               <Font size="14.0" />
                            </font></Label>
-                        <Label fx:id="kainaKiausinis" prefHeight="17.0" prefWidth="39.0" text="1.1">
+                        <Label fx:id="kainaPele" prefHeight="17.0" prefWidth="39.0" text="1.1">
                            <font>
                               <Font size="14.0" />
                            </font></Label>
-                        <TextField fx:id="kiekisKiausiniai" prefHeight="25.0" prefWidth="47.0">
+                        <TextField fx:id="kiekisPele" prefHeight="25.0" prefWidth="47.0">
                            <HBox.margin>
                               <Insets right="5.0" />
                            </HBox.margin></TextField>
@@ -55,11 +55,11 @@
             </VBox>
             <VBox alignment="CENTER" layoutX="30.0" layoutY="19.0" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                <children>
-                  <Label fx:id="_2duona" onMouseClicked="#showDetails" text="Duona">
+                  <Label fx:id="_2klaviatura" onMouseClicked="#showDetails" text="Klaviatūros">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <ImageView fx:id="duonaImage" fitHeight="187.0" fitWidth="262.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="klaviaturaImage" fitHeight="187.0" fitWidth="262.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../assets/keyboard.png" />
                      </image>
@@ -70,11 +70,11 @@
                            <font>
                               <Font size="14.0" />
                            </font></Label>
-                        <Label fx:id="kainaDuona" prefHeight="17.0" prefWidth="39.0" text="1">
+                        <Label fx:id="kainaKlaviatura" prefHeight="17.0" prefWidth="39.0" text="1">
                            <font>
                               <Font size="14.0" />
                            </font></Label>
-                        <TextField fx:id="kiekisDuona" prefHeight="25.0" prefWidth="44.0">
+                        <TextField fx:id="kiekisklaviatura" prefHeight="25.0" prefWidth="44.0">
                            <HBox.margin>
                               <Insets right="5.0" />
                            </HBox.margin>
@@ -92,12 +92,12 @@
             </VBox>
             <VBox alignment="CENTER" layoutX="233.0" layoutY="15.0" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id="_3batonas" onMouseClicked="#showDetails" text="Batonas">
+                  <Label fx:id="_3ausines" onMouseClicked="#showDetails" text="Ausinės">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="batonasImage" fitHeight="161.0" fitWidth="254.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="ausinesImage" fitHeight="161.0" fitWidth="254.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../assets/headphones.png" />
                      </image>
@@ -109,12 +109,12 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="kainaBatonas" prefHeight="17.0" prefWidth="39.0" text="2">
+                        <Label fx:id="kainaAusines" prefHeight="17.0" prefWidth="39.0" text="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="kiekisBatonas" prefHeight="25.0" prefWidth="46.0">
+                        <TextField fx:id="kiekisausines" prefHeight="25.0" prefWidth="46.0">
                            <HBox.margin>
                               <Insets right="5.0" />
                            </HBox.margin>
@@ -133,12 +133,12 @@
             </VBox>
             <VBox alignment="CENTER" layoutX="435.0" layoutY="15.0" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id="_4desra" onMouseClicked="#showDetails" text="Dešra">
+                  <Label fx:id="_4monitorius" onMouseClicked="#showDetails" text="Monitorius">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="desraImage" fitHeight="222.0" fitWidth="296.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="monitoriusImage" fitHeight="222.0" fitWidth="296.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../assets/monitor.png" />
                      </image>
@@ -150,12 +150,12 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="kainaDesra" prefHeight="17.0" prefWidth="39.0" text="0.69">
+                        <Label fx:id="kainaMonitorius" prefHeight="17.0" prefWidth="39.0" text="0.69">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="kiekisDesra" prefHeight="25.0" prefWidth="47.0">
+                        <TextField fx:id="kiekismonitorius" prefHeight="25.0" prefWidth="47.0">
                            <HBox.margin>
                               <Insets right="5.0" />
                            </HBox.margin>
