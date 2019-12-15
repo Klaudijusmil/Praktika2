@@ -81,6 +81,7 @@ public class MainViewController implements Initializable {
         LoginViewController loginViewController = loader.getController();
         loginViewController.setManager(manager);
         loginViewController.setStage(stage);
+        loginViewController.setContainer(emptyContainer);
         loginViewController.setSessionCode(sessionCode);
 
         emptyContainer.getChildren().clear();

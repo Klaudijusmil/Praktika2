@@ -14,10 +14,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LoginViewController implements Initializable {
+public class RegisterViewController implements Initializable {
 
     @FXML
-    private TextField slapyvardis, slaptazodis;
+    private TextField slapyvardis, slaptazodis, slaptazodis2;
     @FXML
     private Pane emptyContainer;
 
@@ -27,7 +27,6 @@ public class LoginViewController implements Initializable {
 
     public void setManager(Manager manager){
         this.manager = manager;
-        System.out.println(manager.isAdmin());
     }
 
     public void setStage(Stage stage) {
@@ -45,33 +44,40 @@ public class LoginViewController implements Initializable {
     public void confirm(){
         String username = slapyvardis.getText();
         String pass = slaptazodis.getText();
+        String pass2 = slaptazodis2.getText();
 
-        User user;
-        try {
-            user = manager.getUserByUsername(username);
-            if(manager.isValidLogin(user, pass))
-                manager.setAdmin(user.isAdmin());
-        } catch (Exception e) {
-            e.printStackTrace();
+        if(pass.equals(pass2)) {
+            User user = new User(0, username, pass, false);
+            try {
+                manager.insertUser(user);
+                loadLogin();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        else{
+            System.out.println("BAD PASSWORD");
         }
 
+        System.out.println(username + "  " + pass);
     }
 
-    public void loadRegister() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Views/RegisterView.fxml"));
-        Node register = loader.load();
+    public void loadLogin() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Views/LoginView.fxml"));
+        Node login = loader.load();
 
-        RegisterViewController registerViewController = loader.getController();
-        registerViewController.setManager(manager);
-        registerViewController.setStage(stage);
-        registerViewController.setContainer(emptyContainer);
-        registerViewController.setSessionCode(sessionCode);
+        LoginViewController loginViewController = loader.getController();
+        loginViewController.setManager(manager);
+        loginViewController.setStage(stage);
+        loginViewController.setContainer(emptyContainer);
+        loginViewController.setSessionCode(sessionCode);
 
         emptyContainer.getChildren().clear();
-        emptyContainer.getChildren().add(register);
+        emptyContainer.getChildren().add(login);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 }

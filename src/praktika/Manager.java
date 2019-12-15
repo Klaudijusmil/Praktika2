@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Manager {
 
     Connection conn = null;
+    private boolean isAdmin = false;
 
     public void connectDB() throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -125,19 +126,20 @@ public class Manager {
         return preke;
     }
 
-    public User getUserByID(int userID) throws Exception {
+    public User getUserByUsername(String username) throws Exception {
         connectDB();
-        PreparedStatement ps = conn.prepareStatement("SELECT * FROM vartotojai WHERE id = ?");
-        ps.setInt(1, userID);
+        PreparedStatement ps = conn.prepareStatement("SELECT * FROM vartotojai WHERE slapyvardis = ?");
+        ps.setString(1, username);
         ResultSet rs = ps.executeQuery();
         User user = null;
 
         while(rs.next()){
             int id = rs.getInt("id");
-            String username = rs.getString("username");
-            String pass = rs.getString("password");
+            String nickname = rs.getString("slapyvardis");
+            String pass = rs.getString("slaptazodis");
+            boolean isAdmin = rs.getBoolean("admin");
 
-            user = new User(id, username, pass);
+            user = new User(id, nickname, pass, isAdmin);
         }
 
         rs.close();
@@ -146,12 +148,19 @@ public class Manager {
         return user;
     }
 
+    public boolean isValidLogin(User user, String pass){
+        if(user != null)
+            return user.getPassword().equals(pass);
+        return false;
+    }
+
     public void insertUser(User user) throws Exception {
         connectDB();
-        PreparedStatement ps = conn.prepareStatement("INSERT INTO vartotojai (id, slapyvardis, slaptazodis) VALUES (?, ?, ?)");
+        PreparedStatement ps = conn.prepareStatement("INSERT INTO vartotojai (id, slapyvardis, slaptazodis, admin) VALUES (?, ?, ?, ?)");
         ps.setInt(1, user.getId());
         ps.setString(2, user.getUsername());
         ps.setString(3, user.getPassword());
+        ps.setBoolean(4, false);
         ps.executeUpdate();
 
         ps.close();
@@ -184,4 +193,11 @@ public class Manager {
         return String.format("%.2f", sum);
     }
 
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
 }

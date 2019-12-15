@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 <VBox alignment="TOP_CENTER" prefHeight="570.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="praktika.Controllers.LoginViewController">
    <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Iveskite savo duomenis" textAlignment="CENTER" wrappingWidth="368.91943359375">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Įveskite savo duomenis" textAlignment="CENTER" wrappingWidth="368.91943359375">
          <font>
             <Font size="25.0" />
          </font>
@@ -22,13 +21,26 @@
             <Insets bottom="20.0" />
          </VBox.margin>
       </TextField>
-      <Label text="Slaptazodis" />
+      <Label text="Slaptažodis" />
       <PasswordField fx:id="slaptazodis" promptText="Slaptazodis">
          <VBox.margin>
             <Insets bottom="20.0" />
          </VBox.margin>
       </PasswordField>
-      <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#confirm" text="Patvirtinti" />
+      <GridPane alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#confirm" text="Patvirtinti" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#loadRegister" text="Registracija" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
+         </children>
+      </GridPane>
    </children>
    <padding>
       <Insets left="150.0" right="150.0" />
