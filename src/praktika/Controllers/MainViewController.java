@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -24,6 +25,8 @@ public class MainViewController implements Initializable {
     private ImageView xIcon, basketIcon;
     @FXML
     private Pane emptyContainer;
+    @FXML
+    private Button loginButton;
 
     private Manager manager = null;
     private Stage stage = null;
@@ -82,6 +85,7 @@ public class MainViewController implements Initializable {
         loginViewController.setManager(manager);
         loginViewController.setStage(stage);
         loginViewController.setContainer(emptyContainer);
+        loginViewController.setLogin(loginButton);
         loginViewController.setSessionCode(sessionCode);
 
         emptyContainer.getChildren().clear();

@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -20,6 +21,8 @@ public class LoginViewController implements Initializable {
     private TextField slapyvardis, slaptazodis;
     @FXML
     private Pane emptyContainer;
+    @FXML
+    private Button login;
 
     private Manager manager = null;
     private Stage stage = null;
@@ -42,6 +45,10 @@ public class LoginViewController implements Initializable {
         this.emptyContainer = emptyContainer;
     }
 
+    public void setLogin(Button login){
+        this.login = login;
+    }
+
     public void confirm(){
         String username = slapyvardis.getText();
         String pass = slaptazodis.getText();
@@ -49,8 +56,10 @@ public class LoginViewController implements Initializable {
         User user;
         try {
             user = manager.getUserByUsername(username);
-            if(manager.isValidLogin(user, pass))
+            if(manager.isValidLogin(user, pass)) {
                 manager.setAdmin(user.isAdmin());
+                login.setDisable(true);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

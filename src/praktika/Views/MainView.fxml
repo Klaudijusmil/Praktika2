@@ -32,9 +32,9 @@
          <children>
             <VBox alignment="CENTER" prefHeight="348.0" prefWidth="132.0" spacing="50.0">
                <children>
-                  <Button minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#loadCatalog" text="Katalogas" />
-                  <Button minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#loadLogin" text="Prisijungimas" />
-                  <Button minHeight="50.0" minWidth="100.0" mnemonicParsing="false" text="D.U.K" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#loadCatalog" text="Katalogas" />
+                  <Button fx:id="loginButton" alignment="CENTER" contentDisplay="CENTER" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#loadLogin" text="Prisijungimas" textAlignment="CENTER" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" text="D.U.K" textAlignment="CENTER" />
                </children>
             </VBox>
             <Separator orientation="VERTICAL" />
