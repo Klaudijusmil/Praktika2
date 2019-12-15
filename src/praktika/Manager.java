@@ -2,6 +2,7 @@ package praktika;
 
 import javafx.scene.image.Image;
 import praktika.Model.Product;
+import praktika.Model.User;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -122,6 +123,39 @@ public class Manager {
         ps.close();
         disconnectDB();
         return preke;
+    }
+
+    public User getUserByID(int userID) throws Exception {
+        connectDB();
+        PreparedStatement ps = conn.prepareStatement("SELECT * FROM vartotojai WHERE id = ?");
+        ps.setInt(1, userID);
+        ResultSet rs = ps.executeQuery();
+        User user = null;
+
+        while(rs.next()){
+            int id = rs.getInt("id");
+            String username = rs.getString("username");
+            String pass = rs.getString("password");
+
+            user = new User(id, username, pass);
+        }
+
+        rs.close();
+        ps.close();
+        disconnectDB();
+        return user;
+    }
+
+    public void insertUser(User user) throws Exception {
+        connectDB();
+        PreparedStatement ps = conn.prepareStatement("INSERT INTO vartotojai (id, slapyvardis, slaptazodis) VALUES (?, ?, ?)");
+        ps.setInt(1, user.getId());
+        ps.setString(2, user.getUsername());
+        ps.setString(3, user.getPassword());
+        ps.executeUpdate();
+
+        ps.close();
+        disconnectDB();
     }
 
     public void deleteDish(Product p) throws Exception {
