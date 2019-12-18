@@ -38,7 +38,14 @@
                </children>
             </VBox>
             <Separator orientation="VERTICAL" />
-            <Pane fx:id="emptyContainer" prefHeight="621.0" prefWidth="663.0" />
+            <Pane fx:id="emptyContainer" prefHeight="621.0" prefWidth="663.0">
+               <children>
+                  <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="618.0" prefWidth="663.0" vbarPolicy="ALWAYS">
+                     <content>
+                        <Pane fx:id="empty" prefHeight="618.0" prefWidth="663.0" />
+                     </content>
+                  </ScrollPane>
+               </children></Pane>
          </children>
       </HBox>
    </children>

@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -24,7 +25,9 @@ public class MainViewController implements Initializable {
     @FXML
     private ImageView xIcon, basketIcon;
     @FXML
-    private Pane emptyContainer;
+    private Pane emptyContainer, empty;
+    @FXML
+    private ScrollPane scrollPane;
     @FXML
     private Button loginButton;
 
@@ -86,8 +89,9 @@ public class MainViewController implements Initializable {
             catalogAdminViewController.setSessionCode(sessionCode);
         }
 
-        emptyContainer.getChildren().clear();
-        emptyContainer.getChildren().add(catalogs);
+        empty.getChildren().clear();
+        empty.getChildren().add(catalogs);
+        scrollPane.setContent(empty);
     }
 
     public void loadLogin() throws IOException {
