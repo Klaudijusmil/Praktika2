@@ -1,9 +1,8 @@
-2019-12-15 23:44:26
+2019-12-18 12:59:35
 Pavadinimas		Kiekis		Kaina
 
-Pelė			1		100.0
-Klaviatūra			3		50.0
-Ausinės			2		110.0
+Pelė			10		50.0
+Prebuild PC			2		1000.0
 
-Kaina (be PVM): 470.00
-Kaina (su PVM): 568.70
+Kaina (be PVM): 2500.00
+Kaina (su PVM): 3025.00

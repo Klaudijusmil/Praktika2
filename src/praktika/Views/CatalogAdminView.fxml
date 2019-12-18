@@ -5,14 +5,15 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<VBox alignment="center" prefHeight="621.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="praktika.Controllers.CatalogAdminViewController">
+<VBox alignment="center" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="praktika.Controllers.CatalogAdminViewController">
    <children>
-      <GridPane hgap="20.0" prefHeight="570.0" prefWidth="663.0" vgap="30.0">
+      <GridPane hgap="20.0" prefHeight="903.0" prefWidth="663.0" vgap="30.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
          </columnConstraints>
          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
@@ -161,6 +162,47 @@
                            </HBox.margin>
                         </TextField>
                         <Button fx:id="_4" mnemonicParsing="false" onAction="#changeQuantity" text="Keisti">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+               <children>
+                  <Label fx:id="_5case" onMouseClicked="#showDetails" text="Monitorius">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="caseImage" fitHeight="222.0" fitWidth="296.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../assets/monitor.png" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="52.0" text="Kaina:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="kainaCase5" prefHeight="20.0" prefWidth="58.0" text="0.69">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="kiekiscase5" prefHeight="25.0" prefWidth="47.0">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Button fx:id="_5" mnemonicParsing="false" onAction="#changeQuantity" text="Keisti">
                            <font>
                               <Font size="14.0" />
                            </font>

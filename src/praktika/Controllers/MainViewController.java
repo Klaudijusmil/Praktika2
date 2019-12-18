@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import praktika.Manager;
@@ -25,11 +26,13 @@ public class MainViewController implements Initializable {
     @FXML
     private ImageView xIcon, basketIcon;
     @FXML
-    private Pane emptyContainer, empty;
+    private Pane emptyContainer;
+    @FXML
+    private AnchorPane empty;
     @FXML
     private ScrollPane scrollPane;
     @FXML
-    private Button loginButton;
+    private Button loginButton, catalogButton;
 
     private Manager manager = null;
     private Stage stage = null;
@@ -37,6 +40,14 @@ public class MainViewController implements Initializable {
 
     public void setManager(Manager manager){
         this.manager = manager;
+        if(manager.isOnline()){
+            loginButton.setDisable(true);
+            catalogButton.setDisable(false);
+        }
+        else{
+            loginButton.setDisable(false);
+            catalogButton.setDisable(true);
+        }
     }
 
     public void setStage(Stage stage) {
@@ -50,7 +61,6 @@ public class MainViewController implements Initializable {
     public void close(){
         Platform.exit();
     }
-
 
     public void loadBasket() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../Views/BasketView.fxml"));
@@ -68,7 +78,7 @@ public class MainViewController implements Initializable {
     }
 
     public void loadCatalog() throws IOException {
-        FXMLLoader loader = null;
+        FXMLLoader loader;
         if(!manager.isAdmin())
             loader = new FXMLLoader(getClass().getResource("../Views/CatalogView.fxml"));
         else
@@ -92,6 +102,8 @@ public class MainViewController implements Initializable {
         empty.getChildren().clear();
         empty.getChildren().add(catalogs);
         scrollPane.setContent(empty);
+        emptyContainer.getChildren().clear();
+        emptyContainer.getChildren().add(scrollPane);
     }
 
     public void loadLogin() throws IOException {
@@ -103,11 +115,13 @@ public class MainViewController implements Initializable {
         loginViewController.setStage(stage);
         loginViewController.setContainer(emptyContainer);
         loginViewController.setLogin(loginButton);
+        loginViewController.setCatalog(catalogButton);
         loginViewController.setSessionCode(sessionCode);
 
         emptyContainer.getChildren().clear();
         emptyContainer.getChildren().add(login);
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

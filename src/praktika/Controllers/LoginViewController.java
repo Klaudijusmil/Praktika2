@@ -22,7 +22,7 @@ public class LoginViewController implements Initializable {
     @FXML
     private Pane emptyContainer;
     @FXML
-    private Button login;
+    private Button login, catalog;
 
     private Manager manager = null;
     private Stage stage = null;
@@ -30,7 +30,6 @@ public class LoginViewController implements Initializable {
 
     public void setManager(Manager manager){
         this.manager = manager;
-        System.out.println(manager.isAdmin());
     }
 
     public void setStage(Stage stage) {
@@ -49,6 +48,10 @@ public class LoginViewController implements Initializable {
         this.login = login;
     }
 
+    public void setCatalog(Button catalog){
+        this.catalog = catalog;
+    }
+
     public void confirm(){
         String username = slapyvardis.getText();
         String pass = slaptazodis.getText();
@@ -59,6 +62,8 @@ public class LoginViewController implements Initializable {
             if(manager.isValidLogin(user, pass)) {
                 manager.setAdmin(user.isAdmin());
                 login.setDisable(true);
+                catalog.setDisable(false);
+                manager.setOnline(true);
             }
         } catch (Exception e) {
             e.printStackTrace();

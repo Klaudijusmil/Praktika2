@@ -23,11 +23,11 @@ import java.util.ResourceBundle;
 public class CatalogAdminViewController implements Initializable {
 
     @FXML
-    private ImageView peleImage, klaviaturaImage, ausinesImage, monitoriusImage;
+    private ImageView peleImage, klaviaturaImage, ausinesImage, monitoriusImage, caseImage;
     @FXML
-    private Label _1pele, _2klaviatura, _3ausines, _4monitorius, kainaPele1, kainaKlaviatura2, kainaAusines3, kainaMonitorius4;
+    private Label _1pele, _2klaviatura, _3ausines, _4monitorius, _5case, kainaPele1, kainaKlaviatura2, kainaAusines3, kainaMonitorius4, kainaCase5;
     @FXML
-    private TextField kiekisPele1, kiekisklaviatura2, kiekisausines3, kiekismonitorius4;
+    private TextField kiekisPele1, kiekisklaviatura2, kiekisausines3, kiekismonitorius4, kiekiscase5;
     @FXML
     private ArrayList<Label> kainos = new ArrayList<>();
     @FXML
@@ -40,7 +40,7 @@ public class CatalogAdminViewController implements Initializable {
     public void setManager(Manager manager){
         this.manager = manager;
         try {
-            setDishInfo();
+            setProductInfo();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -137,23 +137,27 @@ public class CatalogAdminViewController implements Initializable {
         }
     }
 
-    public void setDishInfo() throws Exception {
+    public void setProductInfo() throws Exception {
         Product peles = manager.getProductByID(1);
         Product klaviatura = manager.getProductByID(2);
         Product ausines = manager.getProductByID(3);
         Product monitorius = manager.getProductByID(4);
+        Product caseRGB = manager.getProductByID(5);
         peleImage.setImage(peles.getPaveikslelis());
         klaviaturaImage.setImage(klaviatura.getPaveikslelis());
         ausinesImage.setImage(ausines.getPaveikslelis());
         monitoriusImage.setImage(monitorius.getPaveikslelis());
+        caseImage.setImage(caseRGB.getPaveikslelis());
         _1pele.setText(peles.getPavadinimas());
         _2klaviatura.setText(klaviatura.getPavadinimas());
         _3ausines.setText(ausines.getPavadinimas());
         _4monitorius.setText(monitorius.getPavadinimas());
+        _5case.setText(caseRGB.getPavadinimas());
         kainaPele1.setText(String.valueOf(peles.getKainabepvm()));
         kainaKlaviatura2.setText(String.valueOf(klaviatura.getKainabepvm()));
         kainaAusines3.setText(String.valueOf(ausines.getKainabepvm()));
         kainaMonitorius4.setText(String.valueOf(monitorius.getKainabepvm()));
+        kainaCase5.setText(String.valueOf(caseRGB.getKainabepvm()));
     }
 
     @Override
@@ -162,16 +166,19 @@ public class CatalogAdminViewController implements Initializable {
         kainos.add(kainaKlaviatura2);
         kainos.add(kainaAusines3);
         kainos.add(kainaMonitorius4);
+        kainos.add(kainaCase5);
 
         kainosInput.add(kiekisPele1);
         kainosInput.add(kiekisklaviatura2);
         kainosInput.add(kiekisausines3);
         kainosInput.add(kiekismonitorius4);
+        kainosInput.add(kiekiscase5);
 
         kiekisausines3.setText("0");
         kiekismonitorius4.setText("0");
         kiekisklaviatura2.setText("0");
         kiekisPele1.setText("0");
+        kiekiscase5.setText("0");
     }
 
 }

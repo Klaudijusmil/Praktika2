@@ -188,4 +188,5 @@ public class BasketViewController implements Initializable {
         lentele.getColumns().add(column3);
         lentele.getColumns().add(column4);
     }
+
 }

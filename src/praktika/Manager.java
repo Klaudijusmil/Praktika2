@@ -15,6 +15,7 @@ public class Manager {
 
     Connection conn = null;
     private boolean isAdmin = false;
+    private boolean isOnline = false;
 
     public void connectDB() throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -212,5 +213,13 @@ public class Manager {
 
     public void setAdmin(boolean admin) {
         isAdmin = admin;
+    }
+
+    public boolean isOnline() {
+        return isOnline;
+    }
+
+    public void setOnline(boolean online) {
+        isOnline = online;
     }
 }
