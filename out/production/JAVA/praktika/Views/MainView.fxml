@@ -40,7 +40,7 @@
                <children>
                   <Button fx:id="catalogButton" alignment="CENTER" contentDisplay="CENTER" disable="true" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#loadCatalog" text="Katalogas" />
                   <Button fx:id="loginButton" alignment="CENTER" contentDisplay="CENTER" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#loadLogin" text="Prisijungimas" textAlignment="CENTER" />
-                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" text="D.U.K" textAlignment="CENTER" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#loadFAQ" text="D.U.K" textAlignment="CENTER" />
                </children>
             </VBox>
             <Separator orientation="VERTICAL" />

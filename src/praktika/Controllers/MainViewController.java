@@ -122,6 +122,13 @@ public class MainViewController implements Initializable {
         emptyContainer.getChildren().add(login);
     }
 
+    public void loadFAQ() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Views/faqView.fxml"));
+        Node login = loader.load();
+
+        emptyContainer.getChildren().clear();
+        emptyContainer.getChildren().add(login);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
