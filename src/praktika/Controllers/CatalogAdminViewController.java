@@ -65,25 +65,11 @@ public class CatalogAdminViewController implements Initializable {
 
         Scene scene = new Scene(root);
         Stage stage = new Stage();
-        stage.setTitle("Patiekalo aprasymas");
+        stage.setTitle("Produkto aprasymas");
         stage.setScene(scene);
         stage.initOwner(peleImage.getScene().getWindow());
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.showAndWait();
-    }
-
-    public void addToBasket(ActionEvent event){
-        int dishID = Integer.parseInt(String.valueOf(event.getTarget().toString().charAt(11)));
-        int quantity = getQuantity(dishID);
-        try {
-            if(quantity > 0) {
-                Product preke = manager.getProductByID(dishID);
-                preke.setKiekis(quantity);
-                manager.insertIntoBasket(preke, sessionCode);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     public void changeQuantity(ActionEvent event){
@@ -101,40 +87,6 @@ public class CatalogAdminViewController implements Initializable {
             e.printStackTrace();
         }
 
-    }
-
-    private int getQuantity(int dishID){
-        switch(dishID){
-            case 1:
-                try {
-                    return Integer.parseInt(kiekisPele1.getText());
-                } catch (Exception e){
-                    System.out.println("Bloga įvestis.");
-                }
-            case 2:
-                try {
-                    return Integer.parseInt(kiekisklaviatura2.getText());
-                }
-                catch (Exception e){
-                    System.out.println("Bloga įvestis.");
-                }
-            case 3:
-                try {
-                    return Integer.parseInt(kiekisausines3.getText());
-                }
-                catch (Exception e){
-                    System.out.println("Bloga įvestis.");
-                }
-            case 4:
-                try {
-                    return Integer.parseInt(kiekismonitorius4.getText());
-                }
-                catch (Exception e){
-                    System.out.println("Bloga įvestis.");
-                }
-            default:
-                return -1;
-        }
     }
 
     public void setProductInfo() throws Exception {

@@ -67,7 +67,7 @@ public class BasketViewController implements Initializable {
         Product preke = (Product) lentele.getSelectionModel().getSelectedItem();
         try {
             if (preke != null) {
-                manager.deleteDish(preke);
+                manager.deleteProduct(preke);
                 loadProductsToTable();
             }
         } catch (Exception e) {
@@ -75,14 +75,14 @@ public class BasketViewController implements Initializable {
         }
     }
 
-    public void increaseQuantityOfSelectedDish() {
+    public void increaseQuantityOfSelectedProduct() {
         Product preke = (Product) lentele.getSelectionModel().getSelectedItem();
         if (preke != null) {
             int increasedQuantity = preke.getKiekis() + 1;
             if (increasedQuantity < 1000) {
                 preke.setKiekis(increasedQuantity);
                 try {
-                    manager.updateDishInfo(preke);
+                    manager.updateProcuctInfo(preke);
                     loadProductsToTable();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -97,14 +97,14 @@ public class BasketViewController implements Initializable {
         }
     }
 
-    public void decreaseQuantityOfSelectedDish() {
+    public void decreaseQuantityOfSelectedProduct() {
         Product preke = (Product) lentele.getSelectionModel().getSelectedItem();
         if (preke != null) {
             int decreasedQuantity = preke.getKiekis() - 1;
             if (decreasedQuantity > 0) {
                 preke.setKiekis(decreasedQuantity);
                 try {
-                    manager.updateDishInfo(preke);
+                    manager.updateProcuctInfo(preke);
                     loadProductsToTable();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -171,7 +171,7 @@ public class BasketViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        TableColumn<String, Product> column1 = new TableColumn<>("Patiekalas");
+        TableColumn<String, Product> column1 = new TableColumn<>("Produktas");
         column1.setCellValueFactory(new PropertyValueFactory<>("pavadinimas"));
 
         TableColumn<String, Product> column2 = new TableColumn<>("Kaina (be PVM)");

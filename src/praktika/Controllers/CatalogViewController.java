@@ -53,14 +53,14 @@ public class CatalogViewController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../Views/Aprasymas.fxml"));
         Parent root = loader.load();
 
-        int dishID = Integer.parseInt(String.valueOf(event.getSource().toString().charAt(10)));
+        int productID = Integer.parseInt(String.valueOf(event.getSource().toString().charAt(10)));
         AprasymasController aprasymasController = loader.getController();
         aprasymasController.setManager(manager);
-        aprasymasController.setDishID(dishID);
+        aprasymasController.setDishID(productID);
 
         Scene scene = new Scene(root);
         Stage stage = new Stage();
-        stage.setTitle("Patiekalo aprasymas");
+        stage.setTitle("Produkto aprasymas");
         stage.setScene(scene);
         stage.initOwner(peleImage.getScene().getWindow());
         stage.initModality(Modality.APPLICATION_MODAL);

@@ -11,6 +11,7 @@ import java.io.OutputStream;
 import java.sql.*;
 import java.util.ArrayList;
 
+// visas valdymas
 public class Manager {
 
     Connection conn = null;
@@ -95,7 +96,7 @@ public class Manager {
         disconnectDB();
     }
 
-    public void updateDishInfo(Product p) throws Exception {
+    public void updateProcuctInfo(Product p) throws Exception {
         connectDB();
         PreparedStatement ps = conn.prepareStatement("UPDATE krepselis SET kiekis = ? WHERE krepselio_id = ?");
         ps.setInt(1, p.getKiekis());
@@ -161,7 +162,7 @@ public class Manager {
         disconnectDB();
         return user;
     }
-
+    // tikrinamas loginas
     public boolean isValidLogin(User user, String pass){
         if(user != null)
             return user.getPassword().equals(pass);
@@ -181,7 +182,7 @@ public class Manager {
         disconnectDB();
     }
 
-    public void deleteDish(Product p) throws Exception {
+    public void deleteProduct(Product p) throws Exception {
         connectDB();
         PreparedStatement ps = conn.prepareStatement("DELETE FROM krepselis WHERE krepselio_id = ?");
         ps.setInt(1, p.getId_krepselyje());

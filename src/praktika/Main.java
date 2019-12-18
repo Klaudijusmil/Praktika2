@@ -27,7 +27,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 800, 750));
         primaryStage.show();
     }
-
+    // paleidus programa sukuriamas session code. Tam daroma, kad butu galima sekti pirkimu istorija.
     private String generateSessionCode(){
         String code = "";
         Random r = new Random();

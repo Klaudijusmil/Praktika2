@@ -98,7 +98,7 @@ public class MainViewController implements Initializable {
             catalogAdminViewController.setStage(stage);
             catalogAdminViewController.setSessionCode(sessionCode);
         }
-
+        // scroll bare esanti pane idedi visas prekes, tada pane idedi i scrollbara ir tada viska ikeli i sumazinta langa.
         empty.getChildren().clear();
         empty.getChildren().add(catalogs);
         scrollPane.setContent(empty);

@@ -31,8 +31,8 @@
                   </Button>
                   <HBox alignment="TOP_CENTER" prefHeight="28.0" prefWidth="263.0" spacing="15.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#decreaseQuantityOfSelectedDish" text="Sumažinti kiekį" />
-                        <Button mnemonicParsing="false" onAction="#increaseQuantityOfSelectedDish" text="Padidinti kiekį" />
+                        <Button mnemonicParsing="false" onAction="#decreaseQuantityOfSelectedProduct" text="Sumažinti kiekį" />
+                        <Button mnemonicParsing="false" onAction="#increaseQuantityOfSelectedProduct" text="Padidinti kiekį" />
                      </children>
                      <VBox.margin>
                         <Insets left="20.0" right="20.0" top="10.0" />
