@@ -18,7 +18,7 @@ public class Manager {
     private boolean isAdmin = false;
     private boolean isOnline = false;
 
-    public void connectDB() throws Exception {
+    private void connectDB() throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
         String DB_URL = "jdbc:mysql://localhost:3306/meniu";
         String DB_NAME = "root";
@@ -26,7 +26,7 @@ public class Manager {
         conn = DriverManager.getConnection(DB_URL, DB_NAME, DB_PASS);
     }
 
-    public void disconnectDB() throws SQLException {
+    private void disconnectDB() throws SQLException {
         if(!conn.isClosed())
             conn.close();
     }

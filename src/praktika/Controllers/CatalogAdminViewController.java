@@ -61,7 +61,7 @@ public class CatalogAdminViewController implements Initializable {
         int dishID = Integer.parseInt(String.valueOf(event.getSource().toString().charAt(10)));
         AprasymasController aprasymasController = loader.getController();
         aprasymasController.setManager(manager);
-        aprasymasController.setDishID(dishID);
+        aprasymasController.setProductID(dishID);
 
         Scene scene = new Scene(root);
         Stage stage = new Stage();

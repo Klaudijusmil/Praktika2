@@ -56,7 +56,7 @@ public class CatalogViewController implements Initializable {
         int productID = Integer.parseInt(String.valueOf(event.getSource().toString().charAt(10)));
         AprasymasController aprasymasController = loader.getController();
         aprasymasController.setManager(manager);
-        aprasymasController.setDishID(productID);
+        aprasymasController.setProductID(productID);
 
         Scene scene = new Scene(root);
         Stage stage = new Stage();

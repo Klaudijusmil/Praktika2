@@ -15,20 +15,20 @@ public class AprasymasController implements Initializable {
     private Text aprasymas;
 
     private Manager manager = null;
-    private int dishID = 0;
+    private int productID = 0;
 
     public void setManager(Manager manager){
         this.manager = manager;
     }
 
-    public void setDishID(int id){
-        this.dishID = id;
-        loadDishDetails();
+    public void setProductID(int id){
+        this.productID = id;
+        loadProductDetails();
     }
 
-    public void loadDishDetails(){
+    public void loadProductDetails(){
         try {
-            Product preke = manager.getProductByID(this.dishID);
+            Product preke = manager.getProductByID(this.productID);
             aprasymas.setText(preke.getAprasymas());
         } catch (Exception e) {
             e.printStackTrace();

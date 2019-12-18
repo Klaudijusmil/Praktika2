@@ -4,12 +4,12 @@ import javafx.scene.image.Image;
 
 public class Product {
 
-    int id;
-    int kiekis;
-    String pavadinimas, aprasymas;
-    double kainabepvm, kainasupvm;
-    Image paveikslelis;
-    int id_krepselyje;
+    private int id;
+    private int kiekis;
+    private String pavadinimas, aprasymas;
+    private double kainabepvm, kainasupvm;
+    private Image paveikslelis;
+    private int id_krepselyje;
 
     public Product(){}
 
